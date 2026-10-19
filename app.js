@@ -113,6 +113,29 @@ function retirer(li) {
 async function toast(message, type = 'succes') {
   console.log(`[${type}] ${message}`);
   // TODO 3.1 : créer le toast, l'animer avec animate(), attendre, le faire sortir, le retirer
+  const div = document.createElement('div');
+  div.classList.add('toast');
+  div.classList.add('toast--' + type);
+  div.textContent = message;
+
+  toasts.appendChild(div);
+
+  const etapes = [
+    { opacity: 0, translate: '0 20px' },
+    { opacity: 1, translate: '0 0' }
+  ];
+
+  await el.animate(etapes, { duration: 300, easing: 'ease-out', fill: 'both' }).finished;
+  await attendre(3000);
+
+  const reverse = [
+    { opacity: 1, translate: '0 0' },
+    { opacity: 0, translate: '0 20px' }
+  ];
+  await el.animate(reverse, { duration: 250, easing: 'ease-in', fill: 'reverse' }).finished;
+
+  div.remove();
+
 }
 
 /* ---------------------------------------------------------
