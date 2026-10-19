@@ -76,10 +76,17 @@ main { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 6rem; }
    ========================================================= */
 
 /* TODO 2.2 : @keyframes entrer (seulement un "from" : invisible et 12px plus bas) */
+@keyframes entrer {
+   from { opacity: 0; translate: 0 12px; }
+}
 
 /* TODO 2.2 : .ligne.is-entering
    - joue "entrer" (0.4s, ease-out, both)
    - délai : 60ms × le rang --i, plafonné à 10 avec min() */
+.ligne.is-entering {
+   animation: entrer 0.4s ease-out both;
+   animation-delay: calc(min(var(--i), 10) * 60ms);
+}
 
 /* TODO 2.4 : @keyframes sortir (vers la droite de 40px, en disparaissant) */
 

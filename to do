@@ -3,3 +3,8 @@
 2. la classe "is-loading" n'a pas été remove parce que le fetch(url) a renvoyé une erreur, donc la ligne remove(is-loading) n'a pas été executé
 
 3. parce que l'interface montre que le navigateur est entrain de recuperer les données de la base, et les afficher; un simple rond peut montrer que ça charge seulement ou peut être une manque de connexion
+
+4. min(var(--i), 10) signifie qu'il y a une valeur minimale dans le calcul, que ça ne doit jamais être inférieur à cela, si cela arrive, on prend le minimum
+
+5. parce que c'est le js qui fait ce devoir, il ajoute et retire la classe is-loading à chaque fois donc cela rend le navigateur a oublié à chaque fois l'animation
+
