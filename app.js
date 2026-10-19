@@ -67,6 +67,9 @@ async function charger() {
 
   } catch (e) {
     console.error(e);
+    const message = "Chargement impossible. Réessayez.";
+    const type = 'erreur';
+    toast(message, type);
   } finally {
     zone.classList.remove('is-loading');
     btnCharger.disabled = false;
@@ -89,9 +92,14 @@ function afficher(etudiants) {
     liste.append(li);
   });
   majCompteur();
+  
+  const message = liste.children.length + " étudiants chargés";
+  const type = 'success';
+  toast(message, type);
 }
 
 function retirer(li) {
+  const nom = li.querySelector('strong').textContent;
   // TODO 2.6 : ignorer un deuxième clic pendant la sortie
   if (li.classList.contains('is-removing')) return;
 
@@ -104,6 +112,9 @@ function retirer(li) {
   }, { once: true });
 
   // TODO 3.2 : toast de confirmation
+  const message = nom + " retiré de la liste";
+  const type = 'success';
+  toast(message, type);
 }
 
 /* ---------------------------------------------------------
@@ -125,14 +136,14 @@ async function toast(message, type = 'succes') {
     { opacity: 1, translate: '0 0' }
   ];
 
-  await el.animate(etapes, { duration: 300, easing: 'ease-out', fill: 'both' }).finished;
+  await div.animate(etapes, { duration: 300, easing: 'ease-out', fill: 'both' }).finished;
   await attendre(3000);
 
   const reverse = [
     { opacity: 1, translate: '0 0' },
     { opacity: 0, translate: '0 20px' }
   ];
-  await el.animate(reverse, { duration: 250, easing: 'ease-in', fill: 'reverse' }).finished;
+  await div.animate(reverse, { duration: 250, easing: 'ease-in', fill: 'both' }).finished;
 
   div.remove();
 
