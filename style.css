@@ -89,10 +89,17 @@ main { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 6rem; }
 }
 
 /* TODO 2.4 : @keyframes sortir (vers la droite de 40px, en disparaissant) */
+@keyframes sortir {
+   to { translate: 40px 0; opacity: 0; }
+}
 
 /* TODO 2.4 : .ligne.is-removing
    - joue "sortir" (0.3s, ease-in, forwards)
    - pointer-events: none (plus de clic pendant la sortie) */
+.ligne.is-removing {
+   animation: sortir 0.3s ease-in forwards;
+   pointer-events: none;
+}
 
 /* =========================================================
    NIVEAU 3 — TOASTS

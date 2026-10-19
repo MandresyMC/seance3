@@ -8,3 +8,5 @@
 
 5. parce que c'est le js qui fait ce devoir, il ajoute et retire la classe is-loading à chaque fois donc cela rend le navigateur a oublié à chaque fois l'animation
 
+6. parce que c'est pour avoir une animation plus équilibré
+
