@@ -94,8 +94,13 @@ function afficher(etudiants) {
 function retirer(li) {
   // TODO 2.6 : ignorer un deuxième clic pendant la sortie
   // TODO 2.3 : ajouter is-removing, et ne retirer l'élément qu'à la fin de l'animation
-  li.remove();
-  majCompteur();
+  li.classList.add('is-removing');
+  
+  li.addEventListener("animationend", () => {
+    li.remove();
+    majCompteur();
+  }, { once: true });
+
   // TODO 3.2 : toast de confirmation
 }
 
