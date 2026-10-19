@@ -57,8 +57,19 @@ main { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 6rem; }
    Un pseudo-élément .sk-ligne::after, qui couvre toute la ligne (inset: 0),
    avec un dégradé linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent).
    Il part de translate: -100% 0 et traverse la ligne en boucle (1.2s, infini). */
+.sk-ligne::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+   animation: reflet 1.2s linear infinite;
+}
 
 /* TODO 1.6 : @keyframes reflet */
+@keyframes reflet {
+   from { transform: translateX(-100%); }
+   to { transform: translateX(100%); }
+}
 
 /* =========================================================
    NIVEAU 2 — ARRIVÉE ET SUPPRESSION

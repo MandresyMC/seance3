@@ -2,3 +2,4 @@
 
 2. la classe "is-loading" n'a pas été remove parce que le fetch(url) a renvoyé une erreur, donc la ligne remove(is-loading) n'a pas été executé
 
+3. parce que l'interface montre que le navigateur est entrain de recuperer les données de la base, et les afficher; un simple rond peut montrer que ça charge seulement ou peut être une manque de connexion
