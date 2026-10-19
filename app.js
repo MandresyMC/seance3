@@ -93,6 +93,8 @@ function afficher(etudiants) {
 
 function retirer(li) {
   // TODO 2.6 : ignorer un deuxième clic pendant la sortie
+  if (li.classList.contains('is-removing')) return;
+
   // TODO 2.3 : ajouter is-removing, et ne retirer l'élément qu'à la fin de l'animation
   li.classList.add('is-removing');
   
