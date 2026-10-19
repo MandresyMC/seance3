@@ -1,3 +1,4 @@
 1. Qu'il y a y un bug dans la page, ou le bouton n'a pas bien été appuyé et il le reclique plusieurs fois
 
-2. 
+2. la classe "is-loading" n'a pas été remove parce que le fetch(url) a renvoyé une erreur, donc la ligne remove(is-loading) n'a pas été executé
+

@@ -42,6 +42,8 @@ main { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 6rem; }
 
 /* TODO 1.5 : quand #zone a la classe .is-loading,
    afficher .skeleton (display: grid) et masquer .liste */
+#zone.is-loading .skeleton { display: grid; }
+#zone.is-loading .liste { display: none; }
 
 .sk-ligne { position: relative; overflow: hidden; display: flex; align-items: center; gap: .9rem;
             padding: .7rem .9rem; background: var(--light); border-radius: var(--radius); }

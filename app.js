@@ -54,15 +54,24 @@ function creerLigne(etu) {
    l'attente, et une erreur réseau n'est pas gérée.
    --------------------------------------------------------- */
 async function charger() {
-  // TODO 1.2 : ajouter la classe is-loading sur zone
-  zone.classList.add('is-loading');
-  
   // TODO 1.4 : try / catch / finally (voir l'énoncé)
-  // TODO 1.5 : désactiver le bouton pendant le chargement
-  const etudiants = await apiGetEtudiants();
-  afficher(etudiants);
+  try {
+    // TODO 1.2 : ajouter la classe is-loading sur zone
+    zone.classList.add('is-loading');
+    
+    // TODO 1.5 : désactiver le bouton pendant le chargement
+    btnCharger.disabled = true;
+    
+    const etudiants = await apiGetEtudiants();
+    afficher(etudiants);
 
-  zone.classList.remove('is-loading');
+  } catch (e) {
+    console.error(e);
+  } finally {
+    zone.classList.remove('is-loading');
+    btnCharger.disabled = false;
+  }
+
   // TODO 3.2 : toasts de succès et d'erreur
 }
 
