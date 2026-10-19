@@ -11,3 +11,5 @@
 6. parce que c'est pour avoir une animation plus équilibré
 
 2.5. la classe is-removing n'a pas été executé, le compteur d'étudiants aussi, parce que la classe a été supprimée avant même de commencer l'animation
+
+7. parce que l'animation peut prendre du temps, et au lieu de calculer un setTimeout, on fait juste le await....finished
