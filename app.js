@@ -83,6 +83,9 @@ function afficher(etudiants) {
   etudiants.forEach((etu, i) => {
     const li = creerLigne(etu);
     // TODO 2.1 : donner le rang i à la variable CSS --i, et ajouter la classe is-entering
+    li.style.setProperty('--i', i);
+    li.classList.add('is-entering');
+    
     liste.append(li);
   });
   majCompteur();
